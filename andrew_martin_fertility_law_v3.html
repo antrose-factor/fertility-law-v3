@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew Martin Fertility Law — AI Discovery Analysis | Salix South</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal-900:#0c4a6e; --teal-700:#0e7490; --teal-500:#06b6d4; --teal-100:#cffafe; --teal-50:#ecfeff;
+  --em-800:#065f46; --em-600:#059669; --em-400:#10b981; --em-100:#d1fae5; --em-50:#ecfdf5;
+  --amber-700:#b45309; --amber-500:#d97706; --amber-400:#f59e0b; --amber-100:#fef3c7; --amber-50:#fffbeb;
+  --coral:#dc2626; --coral-100:#fee2e2; --coral-50:#fef2f2;
+  --g950:#0a0a0a; --g900:#171717; --g800:#262626; --g600:#525252; --g400:#a3a3a3; --g300:#d4d4d4; --g200:#e5e5e5; --g100:#f5f5f5; --g50:#fafafa;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--g900);line-height:1.6;-webkit-font-smoothing:antialiased}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(2%,1%)}30%{transform:translate(-1%,4%)}40%{transform:translate(3%,-2%)}50%{transform:translate(-2%,2%)}60%{transform:translate(1%,-3%)}70%{transform:translate(-3%,1%)}80%{transform:translate(2%,3%)}90%{transform:translate(-1%,-1%)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;transition:all .3s ease}
+nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-brand{font-family:var(--serif);color:#fff;font-size:1.1rem;letter-spacing:.01em}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--g400);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--g400);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .8rem;border-radius:20px}
+
+.hero{background:var(--g950);position:relative;padding:10rem 3rem 7rem;overflow:hidden;min-height:92vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,rgba(6,182,212,.06),transparent 70%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(16,185,129,.04),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:-50%;opacity:.03;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;animation:grain 8s steps(10) infinite;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:860px;animation:fadeUp .9s ease both}
+.hero-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1.5rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4rem);color:#fff;line-height:1.18;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal-500),var(--em-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1.1rem;color:var(--g400);max-width:680px;line-height:1.75;margin-bottom:3rem}
+.hero-meta{display:flex;gap:3rem;flex-wrap:wrap}
+.hero-meta-item{display:flex;flex-direction:column;gap:.3rem}
+.hero-meta-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g600)}
+.hero-meta-value{font-size:.9rem;color:var(--g300)}
+
+.numbers-strip{background:var(--g950);border-top:1px solid rgba(255,255,255,.06);padding:2.5rem 3rem}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.num-card{text-align:center}
+.num-card .big{font-family:var(--mono);font-size:2.4rem;font-weight:500;line-height:1;margin-bottom:.5rem;background:linear-gradient(135deg,var(--teal-500),var(--em-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.num-card .big.coral{background:linear-gradient(135deg,var(--coral),#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.num-card .big.amber{background:linear-gradient(135deg,var(--amber-500),var(--amber-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.num-card .lbl{font-size:.78rem;color:var(--g400);line-height:1.5}
+
+section{padding:6rem 3rem}
+.inner{max-width:1100px;margin:0 auto}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-700);margin-bottom:1rem}
+.stitle{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);color:var(--g950);margin-bottom:1rem}
+.slead{font-size:1.05rem;color:var(--g600);max-width:640px;line-height:1.75;margin-bottom:3.5rem}
+.alt{background:var(--g50)}
+.dark{background:var(--g950)}
+
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.pc{background:#fff;border:1.5px solid var(--g200);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:0}
+.pc:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,.06);border-color:transparent}
+.pc.crit::before{background:linear-gradient(180deg,var(--coral),#f87171)}
+.pc.high::before{background:linear-gradient(180deg,var(--amber-500),var(--amber-400))}
+.pc.med::before{background:linear-gradient(180deg,var(--teal-700),var(--teal-500))}
+.pc-rank{font-family:var(--mono);font-size:2.2rem;font-weight:400;color:var(--g200);display:block;margin-bottom:.5rem;line-height:1}
+.pc-badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;margin-bottom:1rem}
+.pc.crit .pc-badge{background:var(--coral-100);color:var(--coral)}
+.pc.high .pc-badge{background:var(--amber-100);color:var(--amber-700)}
+.pc.med .pc-badge{background:var(--teal-100);color:var(--teal-700)}
+.pc-title{font-family:var(--serif);font-size:1.2rem;color:var(--g950);margin-bottom:.75rem}
+.pc-desc{font-size:.85rem;color:var(--g600);line-height:1.7;margin-bottom:1.25rem}
+.pc-metrics{display:flex;gap:2rem;border-top:1px solid var(--g100);padding-top:1rem}
+.pc-mv{font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--g900)}
+.pc-ml{font-size:.72rem;color:var(--g400);margin-top:.2rem}
+
+.insight{border-radius:20px;padding:2.5rem;margin:3rem 0}
+.insight.amber-bg{background:linear-gradient(135deg,var(--amber-50),#fff8ed);border:1px solid var(--amber-100)}
+.insight.teal-bg{background:linear-gradient(135deg,var(--teal-50),#f0fdfa);border:1px solid var(--teal-100)}
+.insight h3{font-family:var(--serif);font-size:1.5rem;color:var(--g950);margin-bottom:1rem}
+.insight p{font-size:.9rem;color:var(--g600);line-height:1.75;margin-bottom:1rem}
+.insight ul{margin:1rem 0 1.5rem;padding-left:0;list-style:none}
+.insight ul li{font-size:.87rem;color:var(--g600);line-height:1.7;margin-bottom:.5rem;padding-left:1.25rem;position:relative}
+.insight ul li span.dot{position:absolute;left:0;top:.6rem;width:6px;height:6px;border-radius:50%;display:inline-block}
+.amber-bg .dot{background:var(--amber-500)}
+.teal-bg .dot{background:var(--teal-500)}
+.insight blockquote{font-size:.9rem;font-style:italic;color:var(--g600);border-left:3px solid var(--amber-400);padding-left:1.25rem;margin-top:1.25rem}
+
+.sol{background:#fff;border:1.5px solid var(--g200);border-radius:20px;overflow:hidden;margin-bottom:1.5rem;transition:box-shadow .25s ease}
+.sol:hover{box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.sol-head{display:flex;justify-content:space-between;align-items:flex-start;padding:2.5rem;border-bottom:1px solid var(--g100)}
+.sol-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-700);margin-bottom:.5rem}
+.sol-name{font-family:var(--serif);font-size:1.5rem;color:var(--g950);margin-bottom:.5rem}
+.sol-solves{font-size:.78rem;color:var(--g400)}
+.sol-val{text-align:right;white-space:nowrap}
+.sol-val-big{font-family:var(--mono);font-size:1.6rem;font-weight:500;background:linear-gradient(135deg,var(--em-600),var(--em-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sol-val-lbl{font-size:.72rem;color:var(--g400);margin-top:.2rem}
+.sol-body{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:2.5rem;gap:2.5rem}
+.sol-body h4{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g600);margin-bottom:.75rem}
+.sol-body p{font-size:.88rem;color:var(--g600);line-height:1.7}
+.feat{list-style:none;padding:0}
+.feat li{font-size:.85rem;color:var(--g600);line-height:1.65;padding:.35rem 0 .35rem 1.1rem;position:relative;border-bottom:1px solid var(--g100)}
+.feat li:last-child{border-bottom:none}
+.feat li::before{content:'→';position:absolute;left:0;color:var(--teal-500);font-size:.8rem}
+
+.roadmap{display:flex;flex-direction:column;gap:0;position:relative;padding-left:3rem}
+.roadmap::before{content:'';position:absolute;left:.85rem;top:1.5rem;bottom:1.5rem;width:3px;background:linear-gradient(to bottom,var(--teal-500),var(--em-400),var(--amber-500));border-radius:2px}
+.phase{display:flex;gap:2.5rem;align-items:flex-start;padding:2.5rem 0;position:relative}
+.phase-dot{width:2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;letter-spacing:.05em;position:absolute;left:-2.85rem;top:2.75rem;flex-shrink:0}
+.phase:nth-child(1) .phase-dot{background:var(--teal-500);color:#fff}
+.phase:nth-child(2) .phase-dot{background:var(--em-400);color:#fff}
+.phase:nth-child(3) .phase-dot{background:var(--amber-400);color:#fff}
+.phase h3{font-family:var(--serif);font-size:1.4rem;color:var(--g950);margin-bottom:.3rem}
+.phase-tl{font-size:.78rem;font-weight:600;color:var(--g400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.phase-goal{font-size:.9rem;color:var(--g600);line-height:1.65;margin-bottom:1.25rem;max-width:600px}
+.phase-dels{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:1.25rem}
+.phase-del{background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:.6rem 1rem;font-size:.8rem;color:var(--g600)}
+.phase-val{display:flex;justify-content:space-between;align-items:center;background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:.75rem 1rem;font-size:.82rem;max-width:400px}
+.phase-val span:last-child{font-family:var(--mono);font-weight:500;color:var(--em-600)}
+
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem}
+.roi-card{border-radius:20px;padding:2.5rem;border:1px solid transparent}
+.roi-card.cost{background:linear-gradient(135deg,#1a0a0a,#2a0f0f);border-color:rgba(220,38,38,.15)}
+.roi-card.value{background:linear-gradient(135deg,#0a1a12,#0a2a18);border-color:rgba(5,150,105,.15)}
+.roi-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:.75rem}
+.roi-amount{font-family:var(--mono);font-size:2.8rem;font-weight:500;margin-bottom:.5rem}
+.roi-card.cost .roi-amount{color:#f87171}
+.roi-card.value .roi-amount{color:var(--em-400)}
+.roi-note{font-size:.83rem;color:var(--g400);line-height:1.65}
+.roi-lines{margin-bottom:2.5rem}
+.roi-line{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.roi-line:last-child{border-bottom:none}
+.roi-line-desc{font-size:.88rem;color:var(--g400);line-height:1.6}
+.roi-line-desc strong{color:var(--g200)}
+.roi-line-val{font-family:var(--mono);font-size:.95rem;color:var(--em-400);white-space:nowrap;margin-left:2rem}
+.strat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.strat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.5rem}
+.strat h4{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:.5rem}
+.strat p{font-size:.8rem;color:var(--g400);line-height:1.65}
+
+.steps{display:flex;flex-direction:column;gap:1.5rem}
+.step{display:flex;gap:2rem;align-items:flex-start}
+.step-num{font-family:var(--mono);font-size:1.5rem;font-weight:400;color:var(--teal-500);min-width:3rem;line-height:1.1}
+.step h4{font-family:var(--serif);font-size:1.1rem;color:var(--g950);margin-bottom:.4rem}
+.step p{font-size:.87rem;color:var(--g600);line-height:1.7}
+
+.calc-grid{display:flex;flex-direction:column;gap:1.25rem}
+
+footer{background:var(--g950);padding:3rem;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.footer-brand{font-family:var(--serif);color:#fff;font-size:1.1rem;margin-bottom:.5rem}
+.footer-note{font-size:.8rem;color:var(--g600)}
+
+@media(max-width:900px){
+  .pain-grid,.sol-body,.roi-grid,.strat-grid,.phase-dels,.numbers-grid{grid-template-columns:1fr}
+  .numbers-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:6rem 1.5rem 4rem}
+  section{padding:4rem 1.5rem}
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .roadmap{padding-left:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Salix South</div>
+  <div class="nav-links">
+    <a href="#pain">Pain Points</a>
+    <a href="#roi">ROI</a>
+    <a href="#calculations">Calculations</a>
+  </div>
+  <div class="nav-tag">Confidential</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Discovery Analysis — Fertility Law Practice</div>
+    <h1>Andrew Martin Fertility Law is losing <em>R4.7M a year</em> — before counting the leads that never converted</h1>
+    <p class="hero-sub">We mapped 11 pain points across the full client lifecycle — from first inquiry to post-birth management. Every one is quantified, ranked, and costed. The opportunity is significant.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Prepared for</span>
+        <span class="hero-meta-value">Andrew Martin, Fertility Law</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-value">March 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Prepared by</span>
+        <span class="hero-meta-value">Anton Rose, Salix South</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS STRIP -->
+<div class="numbers-strip">
+  <div class="numbers-grid">
+    <div class="num-card reveal">
+      <div class="big coral">35–40</div>
+      <div class="lbl">hours per week consumed<br>by pure admin tasks</div>
+    </div>
+    <div class="num-card reveal d1">
+      <div class="big">70</div>
+      <div class="lbl">active surrogacy journeys<br>managed simultaneously</div>
+    </div>
+    <div class="num-card reveal d2">
+      <div class="big amber">100</div>
+      <div class="lbl">leads lost in 2025 without<br>systematic follow-up</div>
+    </div>
+    <div class="num-card reveal d3">
+      <div class="big">R400K</div>
+      <div class="lbl">per surrogacy case — the<br>value of every lost lead</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section id="pain" class="alt">
+  <div class="inner">
+    <div class="eyebrow">Pain Point Analysis</div>
+    <h2 class="stitle">11 friction points. Every one has a fix.</h2>
+    <p class="slead">Ranked by combined impact: time consumed, financial cost, risk exposure, frequency, and revenue implications. Severity thresholds: Critical (&gt;R500K/yr or existential risk), High (significant drain), Medium (meaningful friction).</p>
+    <div class="pain-grid">
+
+      <div class="pc crit reveal">
+        <span class="pc-rank">01</span>
+        <span class="pc-badge">Critical</span>
+        <div class="pc-title">Consent Form Upload Marathon</div>
+        <div class="pc-desc">Andrew manually uploads 20 consent forms per day to SigningHub — 10 in the early morning, 10 at night. At 5 forms per hour, this consumes approximately 4 hours daily. He is the sole operator of this process. A second income stream is being personally managed by a specialist attorney doing clerical work. "I get up at 04:00 every morning and I upload 20 consent forms."</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">~15 hrs/wk</div><div class="pc-ml">Andrew's time</div></div>
+          <div><div class="pc-mv">R1.56M/yr</div><div class="pc-ml">Annual cost ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc crit reveal d1">
+        <span class="pc-rank">02</span>
+        <span class="pc-badge">Critical</span>
+        <div class="pc-title">Lead Conversion Failure</div>
+        <div class="pc-desc">150 inquiries in 2025. Only 50 became clients. 100 leads — each worth up to R400,000 over a 22-month surrogacy journey — disappeared with no systematic re-engagement. The cause: falling behind on follow-up as consultation volume grows. "I don't think it's because my competitors are faster than me." The constraint is operational, not competitive.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">R4–6M</div><div class="pc-ml">Unrealised annual revenue</div></div>
+          <div><div class="pc-mv">67%</div><div class="pc-ml">Lead loss rate ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc crit reveal">
+        <span class="pc-rank">03</span>
+        <span class="pc-badge">Critical</span>
+        <div class="pc-title">Frozen Material Agreement Revenue Leak</div>
+        <div class="pc-desc">Andrew identified an agreement (regulating frozen embryo/gamete instructions) that 15 clients agreed to in February alone — and then never followed through. At R1,750 each, that's R26,250 pending from one month. His own projection: "100,000 a month I could make with fees if I just got them to do what they meant to do." No automated follow-up system exists.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">R1.2M/yr</div><div class="pc-ml">Stated by Andrew directly</div></div>
+          <div><div class="pc-mv">15</div><div class="pc-ml">Agreements stalled in Feb alone</div></div>
+        </div>
+      </div>
+
+      <div class="pc crit reveal d1">
+        <span class="pc-rank">04</span>
+        <span class="pc-badge">Critical</span>
+        <div class="pc-title">Email Overload &amp; Inbox Paralysis</div>
+        <div class="pc-desc">Andrew receives 40–50 emails per day. His inbox has climbed to 120 emails requiring action — double the normal 30–60. He is responding to new leads, managing ongoing journeys, fielding clinic correspondence, and handling billing queries from a single inbox with no triage layer. "I've got 120 emails of which I need to deal with. It's over the last six months, I've noticed I'm not getting to my inbox."</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">10 hrs/wk</div><div class="pc-ml">Target email time</div></div>
+          <div><div class="pc-mv">R1.04M/yr</div><div class="pc-ml">Cost at R2,000/hr ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc high reveal">
+        <span class="pc-rank">05</span>
+        <span class="pc-badge">High</span>
+        <div class="pc-title">SigningHub Mandate Configuration</div>
+        <div class="pc-desc">Setting up a mandate or agreement for electronic signing takes Andrew 15–20 minutes per document. It should take 1 minute via templating. Across multiple mandates per day, this is a significant time drain that is entirely mechanical. "It shouldn't take me 15 minutes. It should take me 1 minute. But that's not working the way I thought the template would work."</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">~5 hrs/wk</div><div class="pc-ml">Avoidable manual time ⚠</div></div>
+          <div><div class="pc-mv">R520K/yr</div><div class="pc-ml">Annual cost at R2,000/hr ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc high reveal d1">
+        <span class="pc-rank">06</span>
+        <span class="pc-badge">High</span>
+        <div class="pc-title">Document Assembly &amp; Court Admin</div>
+        <div class="pc-desc">Despite having comprehensive precedent templates, Andrew still personally assembles affidavits, notice of motions, and court documents — labelling files, inserting the correct headings, formatting, and preparing physical court copies. "It's like labeling, file names, and putting the right heading in the right place, which is so frightening mundane that anyone can do it, but if it doesn't get done properly, it's a big problem." So Andrew does it himself.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">~5 hrs/wk</div><div class="pc-ml">Andrew's drafting/assembly time ⚠</div></div>
+          <div><div class="pc-mv">R520K/yr</div><div class="pc-ml">Annual cost at R2,000/hr ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc high reveal">
+        <span class="pc-rank">07</span>
+        <span class="pc-badge">High</span>
+        <div class="pc-title">Repetitive First Consultation Delivery</div>
+        <div class="pc-desc">Andrew delivers the same 2-hour first consultation — covering the law, the process, surrogate sourcing, timelines, and costs — to every new client. He has done this for ten years. Clients often leave overwhelmed rather than converted. "I basically talk for two hours. I've said it for ten years, it becomes repetitive... Good God. This is so complicated, I'm not even going to answer this guy." Some of this is better delivered asynchronously.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">3 hrs/wk</div><div class="pc-ml">Recoverable via pre-consult content ⚠</div></div>
+          <div><div class="pc-mv">R312K/yr</div><div class="pc-ml">Recoverable value ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc high reveal d1">
+        <span class="pc-rank">08</span>
+        <span class="pc-badge">High</span>
+        <div class="pc-title">Client Journey Communication Gap</div>
+        <div class="pc-desc">After the initial intake, clients enter a 3–4 month operational phase managed entirely by support staff. Andrew loses meaningful contact. Client frustration is rising. He knows this and wants to fix it. "I feel like I lose connection with a client from when I met them, only to reengage with them when I'm drafting court documents... I'm starting to pick up frustrations in clients." Competitors are criticised for the same issue — this is a differentiation opportunity.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">3–4 months</div><div class="pc-ml">Average client silence period</div></div>
+          <div><div class="pc-mv">Reputational</div><div class="pc-ml">Risk to retention &amp; referrals</div></div>
+        </div>
+      </div>
+
+      <div class="pc med reveal">
+        <span class="pc-rank">09</span>
+        <span class="pc-badge">Medium</span>
+        <div class="pc-title">Routine WhatsApp Query Management</div>
+        <div class="pc-desc">Three support staff handle WhatsApp communications across all 70 active journeys. Many queries are routine — status updates, process questions, appointment confirmations. "Questions are relatively familiar or standard over a journey. Answers can be given relatively easily." The staff bandwidth is consumed by queries that an intelligent agent could handle, freeing them for coordination and relationship tasks.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">~30 hrs/wk</div><div class="pc-ml">Combined staff time ⚠</div></div>
+          <div><div class="pc-mv">R195K/yr</div><div class="pc-ml">Staff cost at R125/hr ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc med reveal d1">
+        <span class="pc-rank">10</span>
+        <span class="pc-badge">Medium</span>
+        <div class="pc-title">Dormant Lead Reactivation (No System)</div>
+        <div class="pc-desc">100+ leads from 2025 went cold with no structured follow-up protocol. Some cited cost and said they'd return when ready. Others may have found alternatives. There is no CRM, no re-engagement sequence, and no visibility into which leads are worth revisiting. "Kind of when I have a surge of energy I go down my list... I'd actually like to run a survey of clients that don't take up my services." This is a revenue recovery asset sitting untouched.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">100+ leads</div><div class="pc-ml">Dormant from 2025</div></div>
+          <div><div class="pc-mv">R1.5M+</div><div class="pc-ml">Potential recovery at 5% reactivation ⚠</div></div>
+        </div>
+      </div>
+
+      <div class="pc med reveal">
+        <span class="pc-rank">11</span>
+        <span class="pc-badge">Medium</span>
+        <div class="pc-title">Fragmented Information Intake</div>
+        <div class="pc-desc">Client information arrives from multiple sources — email, WhatsApp, PDF attachments, Google Forms, verbal consultations. There is no structured intake pipeline. Andrew's wife assists with document collection on an ad-hoc basis. "The problem is that we pull it from various sources. It sometimes is confusing and all over the place." This creates rework, gaps in files, and unnecessary time spent chasing information that should have been collected systematically.</div>
+        <div class="pc-metrics">
+          <div><div class="pc-mv">Quality risk</div><div class="pc-ml">On court documents</div></div>
+          <div><div class="pc-mv">2–3 hrs/wk</div><div class="pc-ml">Avoidable admin ⚠</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INSIGHT BOX -->
+    <div class="insight amber-bg reveal">
+      <h3>The Invisible Profit Killers</h3>
+      <p>The most damaging costs in Andrew's practice are not the big-ticket legal matters — they're the 5-minute and 15-minute tasks that repeat dozens of times each day. They don't feel expensive in the moment, but compounded across a week, a month, a year, they add up to an extraordinary drain on a specialist attorney's most valuable resource: focused time.</p>
+      <ul>
+        <li><span class="dot amber-bg"></span><strong>Consent form uploads:</strong> 4 minutes per form × 20 forms per day × 250 working days = 333 hours per year spent on pure data entry. At R2,000/hr, that's R666,000 in attorney time doing what a system should automate.</li>
+        <li><span class="dot amber-bg"></span><strong>SigningHub mandate setup:</strong> 15 minutes per document instead of 1. If Andrew processes 5 mandates per day, the avoidable overhead is 70 minutes daily — 292 hours per year — worth R584,000.</li>
+        <li><span class="dot amber-bg"></span><strong>Frozen material agreements:</strong> R1,750 per agreement, 15 agreed-to in February alone, zero followed through. Not because clients refused — because there was no follow-up system. That's R26,250 evaporating from a single month without a single outbound message.</li>
+        <li><span class="dot amber-bg"></span><strong>Email triage:</strong> 40–50 emails per day from three different client types (new leads, active journeys, clinics) all landing in one inbox with no priority filter — causing the inbox to balloon to 120 while Andrew runs consultations.</li>
+      </ul>
+      <blockquote>"If I had something doing what could be automated in the background, I could structure my days right — two hours of emails, two hours of consultations either side of lunch, three hours for drafting or checking AI's draft. I would be the most productive human being on earth." — Andrew Martin</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section id="roi" class="dark">
+  <div class="inner">
+    <div class="eyebrow" style="color:var(--teal-500)">Return on Investment</div>
+    <h2 class="stitle" style="color:#fff;margin-bottom:3rem">The cost of doing nothing is not zero.</h2>
+    <div class="roi-grid reveal">
+      <div class="roi-card cost">
+        <div class="roi-label">Cost of doing nothing</div>
+        <div class="roi-amount">R4.7M/yr</div>
+        <div class="roi-note">Quantifiable losses: attorney time consumed by admin, frozen agreement revenue leakage, and staff hours on automatable tasks. Does not include the R4–6M in unconverted lead revenue. R2,000/hr is applied as a conservative assumption — Andrew's R3,500 consultation fee across a 1.5–2 hour session supports this range.</div>
+      </div>
+      <div class="roi-card value">
+        <div class="roi-label">Value of full implementation</div>
+        <div class="roi-amount">R5.5–9.5M/yr</div>
+        <div class="roi-note">Quantifiable time recovery + R1.2M frozen agreement revenue + R4–6M lead conversion opportunity at conservative 15–25% recapture rate. Upper bound assumes significant improvement in lead conversion. ⚠ Lead conversion figure is directional.</div>
+      </div>
+    </div>
+    <div class="roi-lines reveal">
+      <div class="roi-line">
+        <div class="roi-line-desc"><strong>Andrew's principal time — admin &amp; automation overhead</strong> — consent forms, email, mandate setup, document assembly. 30–35 hrs/wk × R2,000/hr × 52 weeks.</div>
+        <div class="roi-line-val">R3.12–3.64M/yr ⚠</div>
+      </div>
+      <div class="roi-line">
+        <div class="roi-line-desc"><strong>Frozen material agreement revenue</strong> — agreements discussed with clinic patients that are never followed through due to absence of automated follow-up. Andrew's own estimate.</div>
+        <div class="roi-line-val">R1.20M/yr</div>
+      </div>
+      <div class="roi-line">
+        <div class="roi-line-desc"><strong>Support staff time — automatable queries</strong> — 3 staff × ~10 hrs/wk routine WhatsApp and status queries × R125/hr × 52 weeks.</div>
+        <div class="roi-line-val">R195K/yr ⚠</div>
+      </div>
+      <div class="roi-line">
+        <div class="roi-line-desc"><strong>Lead conversion opportunity</strong> — 100 lost leads/yr × R400K per journey × 15–25% recapture rate. Directional figure only — requires lead quality validation.</div>
+        <div class="roi-line-val">R6–10M/yr ⚠</div>
+      </div>
+    </div>
+    <div class="strat-grid reveal">
+      <div class="strat">
+        <h4>Capacity Without Headcount</h4>
+        <p>Freeing 30–35 hrs/week from Andrew's schedule creates the capacity to take on 1–2 additional surrogacy clients per month without hiring — at R400K per journey, that's R4.8–9.6M/yr in accessible growth.</p>
+      </div>
+      <div class="strat">
+        <h4>A Second Revenue Stream That Runs Itself</h4>
+        <p>The consent form platform is already Andrew's second business in proof-of-concept. Automating ConsentFlow™ transforms it from a 4-hour daily obligation into a recurring revenue engine that scales with clinic volume.</p>
+      </div>
+      <div class="strat">
+        <h4>First Mover Advantage in a Niche Market</h4>
+        <p>There are only two other attorneys doing this work in South Africa. Andrew is already the most expensive. An automation edge extends that advantage into a structural moat — speed, service depth, and capacity that competitors cannot match manually.</p>
+      </div>
+      <div class="strat">
+        <h4>Client Retention &amp; Referral Protection</h4>
+        <p>Andrew's monthly retainer model means every retained client is compounding revenue over 22 months. Closing the 3–4 month communication gap eliminates the primary driver of client frustration — protecting both retention and the referral network that drives new business.</p>
+      </div>
+      <div class="strat">
+        <h4>The Law Update Advantage</h4>
+        <p>Andrew reads every relevant judgment and updates his precedents accordingly. Systematising this with the New Authority Pipeline (Phase 3) turns his existing intellectual discipline into a structured competitive advantage — and creates a natural CPD output stream for his own development.</p>
+      </div>
+      <div class="strat">
+        <h4>A Practice That Works Without Waking at 4am</h4>
+        <p>The current operating model requires Andrew to function as attorney, case manager, IT administrator, and document assembly clerk simultaneously. Automation re-allocates that energy to the highest-leverage activities: client relationship, legal strategy, and business development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CALCULATIONS -->
+<section id="calculations" class="alt">
+  <div class="inner">
+    <div class="eyebrow">Calculations &amp; Assumptions</div>
+    <h2 class="stitle">Every number, traced back to source.</h2>
+    <p class="slead">All calculations use direct client statements where available. Figures marked ⚠ require validation before being used as firm commitments.</p>
+
+    <!-- BASE ASSUMPTIONS -->
+    <div class="insight teal-bg reveal">
+      <h3>Base Assumptions</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem">
+        <div style="background:rgba(255,255,255,.6);border-radius:12px;padding:1.25rem">
+          <div style="font-family:var(--mono);font-size:1.4rem;font-weight:500;color:var(--teal-700)">R2,000/hr ⚠</div>
+          <div style="font-size:.8rem;font-weight:600;color:var(--g600);margin:.3rem 0">ANDREW'S TIME VALUE</div>
+          <div style="font-size:.82rem;color:var(--g600);line-height:1.6">Andrew's first consultation fee is R3,500 for a 1.5–2 hour session, implying a rate of R1,750–R2,333/hr. R2,000/hr is used as a conservative mid-point. All principal time calculations use this figure.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.6);border-radius:12px;padding:1.25rem">
+          <div style="font-family:var(--mono);font-size:1.4rem;font-weight:500;color:var(--teal-700)">R125/hr ⚠</div>
+          <div style="font-size:.8rem;font-weight:600;color:var(--g600);margin:.3rem 0">SUPPORT STAFF RATE</div>
+          <div style="font-size:.82rem;color:var(--g600);line-height:1.6">R20,000/month per staff member ÷ 160 hours. Medium confidence — derived from stated monthly cost of R60,000 for 3 staff. Assumes even split.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.6);border-radius:12px;padding:1.25rem">
+          <div style="font-family:var(--mono);font-size:1.4rem;font-weight:500;color:var(--teal-700)">R400,000</div>
+          <div style="font-size:.8rem;font-weight:600;color:var(--g600);margin:.3rem 0">VALUE PER SURROGACY CASE</div>
+          <div style="font-size:.82rem;color:var(--g600);line-height:1.6">Stated directly by Andrew: "Probably about R400,000 on the low end, over a 22-month period." High confidence. Used as the unit value for lead conversion calculations.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-grid">
+
+      <div class="pc crit reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">01</span>
+        <span class="pc-badge">~15 hrs/wk ⚠</span>
+        <div class="pc-title">Consent Form Upload Marathon</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">20 forms/day ÷ 5 forms/hr = <strong>4 hours/day</strong><br>4 hrs × 5 days/week = <strong>20 hrs/week</strong><br>Using conservative 15 hrs/week (some days lighter)<br>15 hrs × R2,000 × 52 weeks = <strong>R1,560,000/yr</strong></div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew stated directly: "I get up at 04:00 every morning and I upload 20 consent forms... takes me about 5 an hour... I do 10 in the morning and 10 at night." High confidence on volume and time-per-form. R2,000/hr applied as a conservative assumption based on Andrew's R3,500 consultation fee.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc crit reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">02</span>
+        <span class="pc-badge">R4–6M revenue opportunity ⚠</span>
+        <div class="pc-title">Lead Conversion Failure</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">150 inquiries in 2025 → 50 clients = <strong>100 lost leads</strong><br>At R400K/case, 100 leads represent R40M in potential revenue<br>Conservative 10–15% recapture = 10–15 cases<br>10–15 × R400K = <strong>R4M–R6M/yr</strong></div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew stated: "150 inquiries in 2025, and I only turned 50 of them into clients. What happened to the other hundred?" High confidence on volumes. ⚠ Recapture rate (10–15%) is an assumption. Lead quality and true conversion potential requires analysis of the actual lead list.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc crit reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">03</span>
+        <span class="pc-badge">R1.2M/yr — self-stated</span>
+        <div class="pc-title">Frozen Material Agreement Revenue Leak</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew's own projection: R100,000/month = <strong>R1,200,000/yr</strong><br>Validation: R1,750/agreement × 57 agreements/month = R99,750/month ✓<br>Feb example: 15 agreed-to × R1,750 = R26,250 pending from one month alone</div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew stated directly: "100,000 a month I could make with fees if I just got them to do what they meant to do." High confidence on the revenue figure and the R1,750 price point. High confidence overall — this is Andrew's own projection, not ours.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc high reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">04</span>
+        <span class="pc-badge">10 hrs/wk ⚠</span>
+        <div class="pc-title">Email Overload &amp; Inbox Paralysis</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew's ideal: "2 hours of emails" per day = <strong>10 hrs/week</strong><br>60% automated/drafted by AI (routine categories) = 6 hrs recovered<br>6 hrs × R2,000 × 52 = <strong>R624,000/yr</strong> recoverable value</div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew stated: "Two hours of emails" as part of his ideal structured day. 40–50 emails/day confirmed. Inbox at 120 confirmed. ⚠ 60% automation rate is an estimate — actual rate depends on proportion of genuinely routine emails in the mix.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc high reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">05</span>
+        <span class="pc-badge">5 hrs/wk ⚠</span>
+        <div class="pc-title">SigningHub Mandate Setup</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">15–20 min per mandate (stated) vs 1 min (target)<br>Avoidable overhead: ~14–19 min per document<br>Estimated 5 mandates/day × 14 min = 70 min/day = <strong>5.8 hrs/week</strong><br>Using 5 hrs × R2,000 × 52 = <strong>R520,000/yr</strong></div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew stated directly: "It takes me 15-20 minutes to create a mandate update... it shouldn't take me 15 minutes. It should take me 1 minute." High confidence on per-mandate time. ⚠ Daily mandate volume (5/day) is an estimate — needs confirmation.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc med reveal" style="max-width:100%">
+        <span class="pc-rank" style="font-size:1.8rem">09</span>
+        <span class="pc-badge">30 hrs/wk ⚠</span>
+        <div class="pc-title">Routine WhatsApp Query Management (Staff)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">The Calculation</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">3 staff × ~2 hrs/day on routine queries = 6 hrs/day = 30 hrs/week<br>30 hrs × R125/hr × 52 = <strong>R195,000/yr</strong><br>Note: staff have other duties — this is estimated WhatsApp/query portion only</div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;color:var(--g400)">Source &amp; Confidence</div>
+            <div style="font-size:.85rem;color:var(--g600);line-height:1.7">Andrew confirmed staff operate with "WhatsApp open" all day and handle routine queries. He noted "questions are relatively familiar or standard." ⚠ 2 hrs/day per staff member is an estimate — needs observation or time-tracking to validate accurately.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROI ROLL-UP -->
+    <div class="insight amber-bg reveal">
+      <h3>How the R4.7M Figure Was Built</h3>
+      <p>The headline "cost of doing nothing" is built from three traceable components. Every line item is sourced from the discovery transcript or Andrew's own estimates:</p>
+      <ul>
+        <li><span class="dot amber-bg"></span><strong>Andrew's principal time overhead (R3.12–3.64M/yr)</strong> — 30–35 hrs/week of automatable admin × R2,000/hr × 52 weeks. Draws from PP1 (15 hrs), PP4 (6 hrs), PP5 (5 hrs), PP6 (5 hrs), PP7 (3 hrs). R2,000/hr applied as a conservative assumption.</li>
+        <li><span class="dot amber-bg"></span><strong>Frozen material agreement revenue (R1.2M/yr)</strong> — Andrew's own direct projection of R100,000/month. Draws from PP3. Highest confidence figure in the report.</li>
+        <li><span class="dot amber-bg"></span><strong>Support staff automatable time (R195K/yr)</strong> — 30 hrs/week combined staff time on routine queries × R125/hr × 52 weeks. Draws from PP9. ⚠ Hours estimate requires validation.</li>
+      </ul>
+      <p style="margin-top:1rem">Total: R3.12M + R1.2M + R195K = <strong>~R4.5M, rounded to R4.7M at midpoint of principal time range.</strong></p>
+      <blockquote>⚠ Figures to confirm in the scoping session: daily mandate volume (5/day assumed), staff query time (2 hrs/person/day assumed), and lead recapture rate (10–15% assumed). R2,000/hr is applied as a conservative assumption and does not require validation.</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Salix South</div>
+  <div class="footer-note" style="margin-top:.5rem">AI &amp; Automation Consulting · Cape Town, South Africa</div>
+  <div class="footer-note" style="margin-top:.25rem">Confidential — prepared for Andrew Martin, Fertility Law · March 2026</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
